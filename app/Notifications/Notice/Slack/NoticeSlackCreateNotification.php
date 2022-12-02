@@ -32,11 +32,11 @@ class NoticeSlackCreateNotification extends Notification
         if (empty($this->notice)) return false;
         $outs = 'cky_test';
         foreach ($this->notice as $n) $outs = $outs . $n . PHP_EOL . PHP_EOL;
-        $to = 'daab-stage-log';
+        $to = '아이락개발팀';
         return (new SlackMessage)
-                    ->from(env('APP_URL'))
-                    ->to($to)
-                    ->content($outs);
+            ->from(env('APP_URL'))
+            ->to($to)
+            ->content($outs);
     }
 
     /**
@@ -59,9 +59,9 @@ class NoticeSlackCreateNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+            ->line('The introduction to the notification.')
+            ->action('Notification Action', url('/'))
+            ->line('Thank you for using our application!');
     }
 
     /**
