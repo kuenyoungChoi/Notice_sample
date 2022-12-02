@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 
-class NoticeSlackNotification extends Notification
+class NoticeSlackCreateNotification extends Notification
 {
     use Queueable;
 
@@ -30,7 +30,7 @@ class NoticeSlackNotification extends Notification
     public function toSlack($notifiable)
     {
         if (empty($this->notice)) return false;
-        $outs = '';
+        $outs = 'cky_test';
         foreach ($this->notice as $n) $outs = $outs . $n . PHP_EOL . PHP_EOL;
         $to = 'daab-stage-log';
         return (new SlackMessage)

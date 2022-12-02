@@ -2,10 +2,10 @@
 
 namespace App\Unit\Notice\Slack;
 
-use App\Notifications\Notice\Slack\NoticeSlackNotification;
+use App\Notifications\Notice\Slack\NoticeSlackCreateNotification;
 use Illuminate\Support\Facades\Notification;
 
-class NoticeSlackUnit
+class NoticeSlackCreateUnit
 {
     public static function exec($msgs = [], $to = 0, $force = false): array
     {
@@ -19,7 +19,7 @@ class NoticeSlackUnit
         if (0) return $outs;
 
         try {
-            Notification::route('slack', env('SLACK_WEBHOOK'))->notify(new NoticeSlackNotification($msgs, $to));
+            Notification::route('slack', env('SLACK_WEBHOOK'))->notify(new NoticeSlackCreateNotification($msgs, $to));
         } catch (\Exception $e) {
             dump($e->getMessage());
         }

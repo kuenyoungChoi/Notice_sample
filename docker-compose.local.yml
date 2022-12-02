@@ -10,8 +10,7 @@ services:
       - '8089:80'
       # - '443:443'
     volumes:
-      - ~/php:/var/www       ## local
-#      - ../__payIni/payIniLog:/var/log/nginx
+      - ../:/var/www       ## local
       - /etc/localtime:/etc/localtime:ro
     networks:
       payIni:
