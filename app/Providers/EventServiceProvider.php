@@ -15,8 +15,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-        'Illuminate\Notifications\Events\NotificationSending' => [
-            'App\Listeners\CheckNotificationStatus', 
+        Registered::class => [
+            SendEmailVerificationNotification::class,
         ],
     ];
 
