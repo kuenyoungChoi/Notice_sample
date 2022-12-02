@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+
+  cky97:
+    container_name: cky97
+    image: cky97/php:8
+    restart: unless-stopped
+    ports:
+      - '8089:80'
+      # - '443:443'
+    volumes:
+      - ~/php:/var/www       ## local
+#      - ../__payIni/payIniLog:/var/log/nginx
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      payIni:
+        ipv4_address: 173.20.0.4
+
+
+networks:
+  payIni:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 173.20.0.0/24

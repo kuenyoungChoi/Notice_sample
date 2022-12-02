@@ -23,6 +23,11 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function routeNotificationForSlack($notification)
+    {
+        return `http://hooks.slack.com/services/...`;
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
