@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Notifications;
+namespace App\Notifications\Notice\Slack;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -8,7 +8,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Notifications\Notification;
 
-class noticeSlackNotification extends Notification
+class NoticeSlackNotification extends Notification
 {
     use Queueable;
 
@@ -32,7 +32,7 @@ class noticeSlackNotification extends Notification
         if (empty($this->notice)) return false;
         $outs = '';
         foreach ($this->notice as $n) $outs = $outs . $n . PHP_EOL . PHP_EOL;
-        $to = 'clickup-task';
+        $to = 'daab-stage-log';
         return (new SlackMessage)
                     ->from(env('APP_URL'))
                     ->to($to)

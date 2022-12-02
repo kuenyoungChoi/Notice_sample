@@ -2,7 +2,7 @@
 
 namespace App\Unit\Notice\Slack;
 
-use App\Notifications\noticeSlackNotification;
+use App\Notifications\Notice\Slack\NoticeSlackNotification;
 use Illuminate\Support\Facades\Notification;
 
 class NoticeSlackUnit
