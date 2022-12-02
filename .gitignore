@@ -24,3 +24,7 @@ package-lock.json
 .svn
 .idea
 .vscode
+
+
+storage
+bootstrap/cache
